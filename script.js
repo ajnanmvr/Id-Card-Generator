@@ -1,4 +1,3 @@
-
 const filterButton = () => {
   let btns = [
     ["Secondary First Year", "1"],
@@ -15,7 +14,8 @@ const filterButton = () => {
   let container = document.querySelector(".filterButtons");
   for (let i = 0; i < btns.length; i++) {
     container.insertAdjacentHTML(
-      "beforeend",`<li onclick="filterData('${btns[i][0]}')">${btns[i][1]}</li>`
+      "beforeend",
+      `<li onclick="filterData('${btns[i][0]}')">${btns[i][1]}</li>`
     );
   }
 };
@@ -64,7 +64,7 @@ const studentData = [
   },
 ];
 
- filterData = (key)=> {
+filterData = (key) => {
   // Matching Data
   let finalData = studentData.filter((value) => value.section == key);
 
@@ -76,22 +76,28 @@ const studentData = [
   // Creating HTML
   let layout = "";
   finalData.forEach(({ name, adno, section }) => {
-    layout += `<div class="id_card">
+    layout += `
+    <div class="id_card">
     <div class="id_front">
-        <img class="id_image" id="image" src="./data/img/${adno}.png" alt="">
-        <div class="id_data">
-            <p class="name_container">Name: <span id="name">${name}</span> </p>
-            <p class="adno_container">AdNo: <span id="adno">${adno}</span> </p>
-            <p class="section_container">Section: <span id="section">${section}</span> </p>
-            <p class="MemNo_container">Membership No: <span id="memNo">30/${adno}</span> </p>
+    <div class="id_data">
+            <div class="id_image" id="image" style="background:black url('./data/img/${adno}.jpg')" alt="Student Image"></div>
+            <p class="name_adno_container">
+              <span class="name_container">Name: <span class="name">${name}</span> </span>
+              <span class="adno_container">Ad.No: <span class="adno">${adno}</span> </span>
+            </p>
+            <p class="data_footer">
+            <p class="section_container">Section: <span class="section">${section}</span> </p>
+            <p class="memNo_container">Membership Number: <span class="memNo">30/${adno}</span> </p>
+            </p>
         </div>
     </div>
     <div class="id_back"></div>
-    </div>`;
+    </div>
+    `;
   });
 
   // Printing HTML
   document.querySelector("main").innerHTML = layout;
 };
 
-filterData()
+filterData();

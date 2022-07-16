@@ -65,24 +65,38 @@ nav {
 .id_card {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap-reverse;
   color: white;
+  margin-top: 2px;
   text-align: center;
 }
 
 .id_front {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   background-image: url("./res/front.jpg");
 }
 .id_image {
-  border-radius: 15px;
-  height:75px;
-  width:70px;
-  margin: 0 auto;
+  border-radius: 8px;
+  height: 71px;
+  width:67px;
+  margin: 53px auto 0 auto;
+  background-size: cover !important;
 }
-.id_data * {
-font-size: 5px;
+.id_data{
+font-size: 5.5px;
+font-weight: 600;
+}
+.name_adno_container{
+  margin-top: 5px;
+}
+.memNo_container{
+  margin: 10px;
+text-align: right;
+}
+.name,.adno,.section,.memNo{
+  font-weight: 300;
 }
 .id_back {
   background-image: url("./res/back.jpg");
@@ -90,16 +104,23 @@ font-size: 5px;
 .id_front,
 .id_back {
   position: relative;
-  background-size: 10.225cm 5.125cm;
-  height: 5.125cm;
-  width: 10.225cm;
+  background-size: cover  ;
+  height: 5cm;
+  width: 10cm;
 }
+
 /* Print */
 @media print {
+  @page  
+  { 
+      size: A4 portrait;
+      margin: auto 0;
+      -webkit-print-color-adjust: exact;
+  }
   header {
     display: none;
   }
   .id_card {
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
 }
