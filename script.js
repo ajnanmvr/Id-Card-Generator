@@ -57,7 +57,27 @@ const studentData = [
     adno: 3129,
     section: "Degree Second Year",
   },
-  {
+ {
+    name: "Muhammed Mirshad",
+    adno: 3129,
+    section: "Degree Second Year",
+  },  {
+    name: "Muhammed Mirshad",
+    adno: 3129,
+    section: "Degree Second Year",
+  },  {
+    name: "Muhammed Mirshad",
+    adno: 3129,
+    section: "Degree Second Year",
+  },  {
+    name: "Muhammed Mirshad",
+    adno: 3129,
+    section: "Degree Second Year",
+  },  {
+    name: "Muhammed Mirshad",
+    adno: 3129,
+    section: "Degree Second Year",
+  },  {
     name: "Muhammed Mirshad",
     adno: 3129,
     section: "Degree Second Year",
@@ -78,20 +98,26 @@ filterData = (key) => {
   finalData.forEach(({ name, adno, section }) => {
     layout += `
     <div class="id_card">
-    <div class="id_front">
-    <div class="id_data">
-            <div class="id_image" id="image" style="background:black url('./data/img/${adno}.jpg')" alt="Student Image"></div>
-            <p class="name_adno_container">
-              <span class="name_container">Name: <span class="name">${name}</span> </span>
-              <span class="adno_container">Ad.No: <span class="adno">${adno}</span> </span>
-            </p>
-            <p class="data_footer">
-            <p class="section_container">Section: <span class="section">${section}</span> </p>
-            <p class="memNo_container">Membership Number: <span class="memNo">30/${adno}</span> </p>
-            </p>
+        <div class="id_front">
+            <div class="data_header">
+                <p class="heading">Member Identity Card</p>
+                <p class="isActive">Active Member</p>
+            </div>
+            <div class="id_data">
+                <div class="id_image" id="image"
+                    style="background:rgba(255, 255, 0, 0.247) url('./data/img/${adno}.jpg')" alt="Student Image"></div>
+                <p class="name_adno_container">
+                    <span class="name_container">Name: <span class="name">${name}</span> </span>
+                    <span class="adno_container">Ad.No: <span class="adno">${adno}</span> </span>
+                </p>
+                <p class="section_container">Section: <span class="section">${section}</span> </p>
+                <div class="data_footer">
+                    <p class="ValidDate_container">Valid Upto: <span class="section">07-06-2023</span> </p>
+                    <p class="memNo_container">Membership Number: <span class="memNo">30/${adno}</span> </p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="id_back"></div>
+        <div class="id_back"></div>
     </div>
     `;
   });
