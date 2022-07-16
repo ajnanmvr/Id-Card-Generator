@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat ,sans-serif;
+}
+/* Header */
+header {
+  text-align: center;
+  height: 200px;
+}
+h1 {
+  margin: 20px;
+  margin-bottom: 50px;
+}
+.downloadBtn {
+  display: flex;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  font-size: large;
+  border-radius: 25px;
+  z-index: 5;
+  cursor: pointer;
+  color: white;
+}
+.dlText {
+  margin: auto;
+  background-color: darkblue;
+  padding: 6px;
+  padding-right: 110px;
+  padding-left: 15px;
+  width: 100px;
+  margin-right: -25px;
+  border-radius: 25px;
+}
+.dlImg {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+.filterButtons li {
+  display: inline;
+  margin: 5px;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.filterButtons li:hover {
+  background-color: #ddd;
+}
+
+.filterButtons li.active {
+  background-color: #666;
+  color: white;
+}
+nav {
+  position: sticky;
+  top: 30px;
+}
+/* ID Card Design */
+.id_card {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  text-align: center;
+}
+
+.id_front {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("./res/front.jpg");
+}
+.id_image {
+  border-radius: 15px;
+  height:75px;
+  width:70px;
+  margin: 0 auto;
+}
+.id_data * {
+font-size: 5px;
+}
+.id_back {
+  background-image: url("./res/back.jpg");
+}
+.id_front,
+.id_back {
+  position: relative;
+  background-size: 10.225cm 5.125cm;
+  height: 5.125cm;
+  width: 10.225cm;
+}
+/* Print */
+@media print {
+  header {
+    display: none;
+  }
+  .id_card {
+    page-break-inside: avoid;
+  }
+}
