@@ -21,15 +21,7 @@ const filterButton = () => {
 };
 filterButton();
 
-var filterBtnContainer = document.querySelector(".filterButtons");
-var filterBtns = filterBtnContainer.querySelectorAll("li");
-for (var i = 0; i < filterBtns.length; i++) {
-  filterBtns[i].addEventListener("click", function () {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+
 
 const studentData = [
   {
@@ -85,12 +77,16 @@ const studentData = [
 ];
 
 filterData = (key) => {
+  let dataInfo = document.querySelector('.dataInfo')
   // Matching Data
   let finalData = studentData.filter((value) => value.section == key);
-
   // returns Complete Database is `$key` Doesn't Exsist
   if (!key) {
     finalData = studentData;
+    dataInfo.style.opacity = "0"
+  }else{
+    dataInfo.style.opacity = "1"
+
   }
 
   // Creating HTML
@@ -124,6 +120,37 @@ filterData = (key) => {
 
   // Printing HTML
   document.querySelector("main").innerHTML = layout;
+  
+// Toggling NavBar
+let filterBtnContainer = document.querySelector(".filterButtons");
+let filterBtns = filterBtnContainer.querySelectorAll("li");
+for (let i = 0; i < filterBtns.length; i++) {
+  filterBtns[i].addEventListener("click", function () {
+    let current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+  // Printing Info
+    let myInfo = document.querySelector('.info')
+  let newInfo =`
+  <table>
+    <tr class="filteredData">
+      <th>Filtered Data:</th>
+      <td>${finalData.length}</td>
+    </tr>
+    <tr>
+    <th>Filtering By:</th>
+    <td>${key}</td>
+  </tr>
+    <tr class="totalData">
+      <th>Total Data:</th>
+      <td>${studentData.length}</td>
+    </tr>
+  </table>`
+
+  myInfo.innerHTML = newInfo
 };
 
 filterData();

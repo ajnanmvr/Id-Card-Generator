@@ -11,10 +11,6 @@
 <body>
     <header>
         <h1>Id Card Generator</h1>
-        <div class="downloadBtn" onclick="window.print()">
-            <span class="dlText">Download</span>
-            <img class="dlImg" src="./res/dl.png" alt="Download">
-        </div>
         <nav>
             <ul class="filterButtons">
                 <li class="allFilter active" onclick="filterData()">All</li>
@@ -27,6 +23,36 @@
     <main>
         <!-- Main Data Will Append Here -->
     </main>
+    <footer>
+        <div class="dataInfo">
+            <div class="titleBar">
+                <h3>Filter Info</h3>
+                <a href="#" title="Clear All Filters" onclick="filterData()">clear <b>X</b></a>
+            </div>
+            <div class="info">
+                <table>
+                    <tr>
+                        <th>Filtered Data:</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>All Data :</th>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="end">
+                <p><a href="#" class="print" onclick="window.print()">Print</a></p>
+                <div class="credits">
+                    &copy; ASAs Media 2022
+                </div>
+            </div>
+        </div>
+        <div class="downloadBtn" onclick="window.print()">
+            <span class="dlText">Download</span>
+            <img class="dlImg" src="./res/dl.png" alt="Download">
+        </div>
+    </footer>
     <script src="./script.js"></script>
 </body>
 
