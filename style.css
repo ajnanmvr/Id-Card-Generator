@@ -122,7 +122,7 @@ h1 {
   height: 5cm;
 }
 /* footer */
-footer{
+footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -130,9 +130,9 @@ footer{
   bottom: 15px;
   left: 25px;
   right: 10px;
-
-}.dataInfo{
-  width:150px;
+}
+.dataInfo {
+  width: 150px;
   background-color: #d6d4e9;
   border-radius: 9px;
   color: #030337;
@@ -146,28 +146,45 @@ footer{
   justify-content: space-between;
   margin: auto;
 }
-.titleBar a{
-color:grey
+.titleBar p {
+  color: red;
+  text-decoration: underline;
 }
-.titleBar a:hover{
-  color:black
-  }
+.titleBar b {
+  margin-left: 2px;
+}
+.titleBar p:hover {
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  padding: 3px 4px;
+  border-radius: 5px;
+}
+.titleBar p:hover b {
+  color: red;
+  background-color: white;
+  padding: 1px 3px;
+  border-radius: 5px;
+}
 .dataInfo table {
   color: white;
   text-align: left;
   margin: 4px;
-}.print:hover{
-font-weight: 600;
+}
+.print:hover {
+  font-weight: 600;
 }
 .dataInfo tr {
   background-color: #030337d2;
   margin: 2px 0;
 }
-.dataInfo th,.dataInfo td{
+.dataInfo th,
+.dataInfo td {
   border-radius: 5px;
-padding: 2px;
+  padding: 2px;
 }
-.filteredData td,.totalData td{
+.filteredData td,
+.totalData td {
   text-align: center;
   font-size: 15px;
 }
@@ -208,7 +225,8 @@ padding: 2px;
     size: A4 portrait;
     margin: 5px 0;
   }
-  header,footer {
+  header,
+  footer {
     display: none;
   }
   .id_card {

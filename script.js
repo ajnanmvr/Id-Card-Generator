@@ -1,26 +1,25 @@
+let btns = [
+  ["Secondary First Year", "1"],
+  ["Secondary Second Year", "2"],
+  ["Secondary Third Year", "3"],
+  ["Secondary Fourth Year", "4"],
+  ["Secondary Fifth Year", "5"],
+  ["Senior Secondary First Year", "6"],
+  ["Senior Secondary Second Year", "7"],
+  ["Degree First Year", "8"],
+  ["Degree Second Year", "9"],
+  ["Degree Third Year", "10"],
+];
 const filterButton = () => {
-  let btns = [
-    ["Secondary First Year", "1"],
-    ["Secondary Second Year", "2"],
-    ["Secondary Third Year", "3"],
-    ["Secondary Fourth Year", "4"],
-    ["Secondary Fifth Year", "5"],
-    ["Senior Secondary First Year", "6"],
-    ["Senior Secondary Second Year", "7"],
-    ["Degree First Year", "8"],
-    ["Degree Second Year", "9"],
-    ["Degree Third Year", "10"],
-  ];
   let container = document.querySelector(".filterButtons");
   for (let i = 0; i < btns.length; i++) {
     container.insertAdjacentHTML(
       "beforeend",
-      `<li onclick="filterData('${btns[i][0]}')">${btns[i][1]}</li>`
+      `<li class="${btns[i][0].replaceAll(' ','-')}" onclick="filterData('${btns[i][0]}')">${btns[i][1]}</li>`
     );
   }
 };
 filterButton();
-
 
 
 const studentData = [
@@ -116,21 +115,13 @@ filterData = (key) => {
         <div class="id_back"></div>
     </div>
     `;
+    
   });
 
   // Printing HTML
   document.querySelector("main").innerHTML = layout;
-  
-// Toggling NavBar
-let filterBtnContainer = document.querySelector(".filterButtons");
-let filterBtns = filterBtnContainer.querySelectorAll("li");
-for (let i = 0; i < filterBtns.length; i++) {
-  filterBtns[i].addEventListener("click", function () {
-    let current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+
+    
 
   // Printing Info
     let myInfo = document.querySelector('.info')

@@ -1,15 +1,11 @@
-Id Card HTML Model is:
+// Toggling NavBar
+let filterBtnContainer = document.querySelector(".filterButtons");
+let filterBtns = filterBtnContainer.querySelectorAll("li");
 
-<div class="id_card">
-    <div class="id_front">
-        <img class="id_image" id="image" src="./img/3127.png" alt="">
-        <div class="id_data">
-            <p class="name_container">Name: <span id="name"> name</span> </p>
-            <p class="adno_container">AdNo: <span id="adno"> adno</span> </p>
-            <p class="section_container">Section: <span id="section"> sect</span> </p>
-            <p class="valid_container">Valid: <span id="valid"> valid</span> </p>
-        </div>
-
-    </div>
-    <div class="id_back">Back</div>
-</div>
+for (let i = 0; i < filterBtns.length; i++) {
+  filterBtns[i].addEventListener("click", function () {
+    let current = document.querySelector(".active");
+    current.className = current.className.replace(" active", "");
+    this.className += " active";
+  });
+}
