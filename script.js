@@ -5,10 +5,10 @@ let btns = [
   ["Secondary Fourth Year", "4"],
   ["Secondary Fifth Year", "5"],
   ["Senior Secondary First Year", "6"],
-  ["Senior Secondary Second Year", "7"],
+  ["Senior Secondary Final Year", "7"],
   ["Degree First Year", "8"],
   ["Degree Second Year", "9"],
-  ["Degree Third Year", "10"],
+  ["Degree Final Year", "10"],
 ];
 const filterButton = () => {
   let container = document.querySelector(".filterButtons");
@@ -24,24 +24,130 @@ const filterButton = () => {
 
 let studentData = [
   {
-    name: "Muhammed Ajnan P",
-    adno: 3127,
+    adNo: "3012",
+    name: "MUHAMMED HUSSAIN",
+    section: "Degree Final Year",
+    memNo: "30/293012",
+  },
+  {
+    adNo: "3645",
+    name: "MOHAMMED ASHIQ AS",
+    section: "Degree Second Year",
+    memNo: "30/303645",
+  },
+  {
+    adNo: "3158",
+    name: "NAZIM ALI MOHAMED KA",
+    section: "Degree Second Year",
+    memNo: "30/303158",
+  },
+  {
+    adNo: "3353",
+    name: "MUHAMMED SINAN K",
     section: "Degree First Year",
+    memNo: "30/313353",
   },
   {
-    name: "Muhammed Niyas KP",
-    adno: 3128,
-    section: "Degree Second Year",
+    adNo: "3328",
+    name: "MUHAMMED BUJAIR C P",
+    section: "Degree First Year",
+    memNo: "30/313328",
   },
   {
-    name: "Muhammed Mirshad",
-    adno: 3129,
-    section: "Degree Second Year",
+    adNo: "3353",
+    name: "MUHAMMED SINAN K",
+    section: "Degree First Year",
+    memNo: "30/313353",
   },
   {
-    name: "Muhammed Mirshad",
-    adno: 3129,
-    section: "Degree Second Year",
+    adNo: "3328",
+    name: "MUHAMMED BUJAIR C P",
+    section: "Degree First Year",
+    memNo: "30/313328",
+  },
+  {
+    adNo: "3353",
+    name: "MUHAMMED SINAN K",
+    section: "Degree First Year",
+    memNo: "30/313353",
+  },
+  {
+    adNo: "3328",
+    name: "MUHAMMED BUJAIR C P",
+    section: "Degree First Year",
+    memNo: "30/313328",
+  },
+  {
+    adNo: "3353",
+    name: "MUHAMMED SINAN K",
+    section: "Degree First Year",
+    memNo: "30/313353",
+  },
+  {
+    adNo: "3328",
+    name: "MUHAMMED BUJAIR C P",
+    section: "Degree First Year",
+    memNo: "30/313328",
+  },
+  {
+    adNo: "3353",
+    name: "MUHAMMED SINAN K",
+    section: "Degree First Year",
+    memNo: "30/313353",
+  },
+  {
+    adNo: "3328",
+    name: "MUHAMMED BUJAIR C P",
+    section: "Degree First Year",
+    memNo: "30/313328",
+  },
+  {
+    adNo: "3353",
+    name: "MUHAMMED SINAN K",
+    section: "Degree First Year",
+    memNo: "30/313353",
+  },
+  {
+    adNo: "3328",
+    name: "MUHAMMED BUJAIR C P",
+    section: "Degree First Year",
+    memNo: "30/313328",
+  },
+  {
+    adNo: "3353",
+    name: "MUHAMMED SINAN K",
+    section: "Degree First Year",
+    memNo: "30/313353",
+  },
+  {
+    adNo: "3328",
+    name: "MUHAMMED BUJAIR C P",
+    section: "Degree First Year",
+    memNo: "30/313328",
+  },
+  {
+    adNo: "3353",
+    name: "MUHAMMED SINAN K",
+    section: "Degree First Year",
+    memNo: "30/313353",
+  },
+  {
+    adNo: "3328",
+    name: "MUHAMMED BUJAIR C P",
+    section: "Degree First Year",
+    memNo: "30/313328",
+  },
+  {
+    adNo: "3353",
+    name: "MUHAMMED SINAN K",
+    section: "Degree First Year",
+    memNo: "30/313353",
+  },
+  {
+    adNo: "3328",
+    name: "MUHAMMED BUJAIR C P",
+    section: "Degree First Year",
+    memNo: "30/313328",
   },
 ];
 
@@ -59,9 +165,8 @@ let filterData = (key) => {
 
   // Creating HTML
   let layout = "";
-  finalData.forEach(({ name, adno, section }) => {
+  finalData.forEach(({ name, adNo, section, memNo }) => {
     layout += `
-    <div class="id_card">
         <div class="id_front">
             <div class="data_header">
                 <p class="heading">Member Identity Card</p>
@@ -69,20 +174,21 @@ let filterData = (key) => {
                 </div>
             <div class="id_data">
                 <div class="id_image" id="image"
-                    style="background:rgba(255, 255, 0, 0.247) url('./data/img/${adno}.jpg')" alt="Student Image"></div>
-                <p class="name_adno_container">
+                    style="background:rgba(255, 255, 0, 0.247) url('./data/img/${
+                      section + "/" + adNo
+                    }.jpg')" alt="Student Image"></div>
+                <p class="name_adNo_container">
                     <span class="name_container">Name: <span class="name">${name}</span> </span>
-                    <span class="adno_container">Ad.No: <span class="adno">${adno}</span> </span>
+                    <span class="adNo_container">Ad.No: <span class="adNo">${adNo}</span> </span>
                     </p>
                 <p class="section_container">Section: <span class="section">${section}</span> </p>
                 <div class="data_footer">
                     <p class="ValidDate_container">Valid Upto: <span class="section">07-06-2023</span> </p>
-                    <p class="memNo_container">Membership Number: <span class="memNo">30/${adno}</span> </p>
+                    <p class="memNo_container">Membership Number: <span class="memNo">${memNo}</span> </p>
                 </div>
             </div>
         </div>
         <div class="id_back"></div>
-    </div>
     `;
   });
 

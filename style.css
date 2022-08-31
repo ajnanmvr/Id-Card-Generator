@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Montserrat, sans-serif;
-  transition: all 0.2s ease-in-out;
 }
 /* Header */
 header {
@@ -49,21 +48,18 @@ h1 {
   color: white;
 }
 /* Main */
+main {
+  color: white;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+}
 @media screen {
   main {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
   }
 }
 /* ID Card Design */
-.id_card {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap-reverse;
-  color: white;
-  margin-top: 5 px;
-}
 .id_front {
   display: flex;
   flex-direction: column;
@@ -96,11 +92,11 @@ h1 {
   font-size: 5.5px;
   font-weight: 600;
 }
-.name_adno_container {
+.name_adNo_container {
   margin-top: 5px;
 }
 .name,
-.adno,
+.adNo,
 .section,
 .memNo {
   font-weight: 300;
@@ -112,14 +108,14 @@ h1 {
 }
 .id_back {
   background-image: url("./res/back.jpg");
-  display: none;
 }
 .id_front,
 .id_back {
   position: relative;
   background-size: cover;
-  width: 10cm;
-  height: 5cm;
+  background-position: center;
+  width: 91.02mm;
+  height: 54.02mm;
 }
 /* footer */
 footer {
@@ -222,17 +218,11 @@ footer {
 /* Print */
 @media print {
   @page {
-    size: A4 portrait;
-    margin: 5px 0;
+    size: 12in 18in;
+    margin: 12.54mm 5mm;
   }
   header,
   footer {
     display: none;
-  }
-  .id_card {
-    page-break-inside: avoid;
-  }
-  .id_back {
-    display: block;
   }
 }
